@@ -25,8 +25,8 @@ set guicursor+=a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,
 set guicursor+=sm:block-blinkwait175-blinkoff150-blinkon175
   
 " Reset cursor to blinking vertical bar on leave
-au VimLeave * set guicursor=a:ver25-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-
+autocmd VimLeave * set guicursor=a:ver25-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+au VimLeave * call nvim_cursor_set_shape("vertical-bar")
 
 " If more than one window and previous buffer was NERDTree, go back to it.
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
